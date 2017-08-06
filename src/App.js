@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -240,9 +241,14 @@ const Table = ({ list, pattern, onDismiss }) =>
 //   }
 // }
 
+// Table.propTypes = {
+//   list: PropTypes.array.isRequired,
+//   onDismiss: PropTypes.func.isRequired,
+// };
+
 class Button extends Component {
   render() {
-    const { onClick, className = "", children } = this.props;
+    const { onClick, className, children } = this.props;
     return (
       <button onClick={onClick} className={className} type="button">
         {children}
@@ -251,4 +257,21 @@ class Button extends Component {
   }
 }
 
+// Button.propTypes = {
+//   onClick: PropTypes.func.isRequired,
+//   className: PropTypes.string,
+//   children: PropTypes.node,
+// };
+
+Button.defaultProps = {
+  className: '',
+};
+
+
 export default App;
+
+
+export {
+  Button,
+  Search,
+Table, };
